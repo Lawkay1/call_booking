@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'paystackapi',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['example.com', 'callbooking.ibukunlawson.repl.co']
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
