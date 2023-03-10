@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'paystackapi',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['example.com', 'callbooking.ibukunlawson.repl.co']
+CSRF_TRUSTED_ORIGINS = ['https://www.callbooking.ibukunlawson.repl.co']
 
 
 MIDDLEWARE = [
