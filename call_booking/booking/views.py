@@ -19,7 +19,8 @@ def book_call(request):
         #paystack.api_key = 'sk_test_5ff6980044e0064be985cb2f1080b67967ea1006'
         paystack = Paystack(secret_key=config('PAYSTACK-SECRET-KEY'))
         # Get amount to charge from user
-        amount = 2000  # example amountC
+        
+        amount = 2000 * booking.hours  # example amountC
 
         # Create Paystack transaction
         transaction = Transaction.initialize(
@@ -52,7 +53,7 @@ def payment_callback(request):
         booking.paid = True
         booking.save()
         print(booking)
-        return HttpResponse(f'Payment successful your call has been booked at {booking.date}, {booking.time}')
+        return HttpResponse(f'Payment successful your call has been booked at {booking.date}, {booking.time}, for {booking.hours} hours')
     else:
         return HttpResponse('Payment failed please try again')
     

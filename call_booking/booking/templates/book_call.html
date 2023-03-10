@@ -1,10 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Book a Call</h1>
-<form method="post" action="{% url 'book_call' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Book Call</button>
-</form>
+<div style="text-align:center; margin-top:50px;">
+    <h1 style="color:#555; margin-bottom:30px;">Book a Call</h1>
+    <p>The charge per session is 2000 per hour.</p>
+    <form method="post" action="{% url 'book_call' %}" style="display:inline-block; text-align:left; border: 2px solid #ccc; padding: 20px;">
+        {% csrf_token %}
+        <div style="margin-bottom:20px;">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+        <div style="margin-bottom:20px;">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div style="margin-bottom:20px;">
+            {{ form.phone.label_tag }}
+            {{ form.phone}}
+        </div>
+  
+        <div style="margin-bottom:20px;">
+          {{ form.date.label_tag }}
+          {{ form.date}}
+        </div>
+
+        <div style="margin-bottom:20px;">
+            {{ form.time.label_tag }}
+            {{ form.time }}
+        </div>
+
+        <div style="margin-bottom:20px;">
+          {{ form.hours.label_tag }}
+          {{ form.hours }}
+      </div>
+        <button type="submit" style="background-color:#4CAF50; color:white; border:none; padding:10px 20px; text-align:center; display:inline-block; font-size:16px; margin-top:10px;">Book Call</button>
+    </form>
+</div>
 {% endblock %}

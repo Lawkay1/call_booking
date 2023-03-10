@@ -9,5 +9,6 @@ class Book(models.Model):
     date = models.DateField()
     time = models.TimeField()
     paid = models.BooleanField(default=False)
+    hours = models.IntegerField(default=1)
 
     
