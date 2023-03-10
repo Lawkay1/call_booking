@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Book a Call</h1>
+<form method="post" action="{% url 'book_call' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Book Call</button>
+</form>
+{% endblock %}
